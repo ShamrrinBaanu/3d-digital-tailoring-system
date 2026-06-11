@@ -39,18 +39,18 @@ def run_script_and_get_metrics(script_name):
                 if match:
                     hip_value = float(match.group(1))
     except Exception as e:
-        print(f"\n⚠️ Log parsing notice: {e}")
+        print(f"\nLog parsing notice: {e}")
 
     process.wait()
     return chest_value, hip_value
 
 def pipeline_countdown(seconds, message):
     """Prints a clear terminal-based countdown timer for the review panel."""
-    print(f"\n⏱️ {message.upper()} ⏱️")
+    print(f"\n{message.upper()} ")
     for i in range(seconds, 0, -1):
-        print(f"👉 Starting in: {i} seconds... Get into position!", end="\r")
+        print(f"Starting in: {i} seconds... Get into position!", end="\r")
         time.sleep(1)
-    print("\n🚀 LAUNCHING CAMERA NOW!\n")
+    print("\nLAUNCHING CAMERA NOW!\n")
 
 def calculate_ramanujan_perimeter(w, d):
     """Calculates the 3D circumference using the Ellipse math formula."""
@@ -62,7 +62,7 @@ def calculate_ramanujan_perimeter(w, d):
 
 def main():
     print("==================================================")
-    print("🚀 AUTOMATED PIPELINE FUSION (WITH TIMER MODES)")
+    print("AUTOMATED PIPELINE FUSION (WITH TIMER MODES)")
     print("==================================================")
 
     # 1. Front View Pipeline Phase
@@ -72,10 +72,10 @@ def main():
     f_chest, f_hip = run_script_and_get_metrics(front_width_file)
     
     if f_chest == 0 and f_hip == 0:
-        print("\n❌ Error: Front view script did not output valid metrics. Stopping pipeline.")
+        print("\nError: Front view script did not output valid metrics. Stopping pipeline.")
         return
 
-    print(f"\n✅ Front View Metrics Logged -> Width 1: {f_chest} cm | Width 2: {f_hip} cm")
+    print(f"\nFront View Metrics Logged -> Width 1: {f_chest} cm | Width 2: {f_hip} cm")
 
     # 2. Side View Pipeline Phase
     side_depth_file = "measure3d.py"
@@ -84,10 +84,10 @@ def main():
     s_chest, s_hip = run_script_and_get_metrics(side_depth_file)
 
     if s_chest == 0 and s_hip == 0:
-        print("\n❌ Error: Side view script did not output valid metrics. Stopping pipeline.")
+        print("\nError: Side view script did not output valid metrics. Stopping pipeline.")
         return
 
-    print(f"\n✅ Side View Metrics Logged -> Depth 1: {s_chest} cm | Depth 2: {s_hip} cm")
+    print(f"\n Side View Metrics Logged -> Depth 1: {s_chest} cm | Depth 2: {s_hip} cm")
 
     # 3. Geometric Ellipse Mathematical Calculations
     chest_circumference = calculate_ramanujan_perimeter(f_chest, s_chest)
