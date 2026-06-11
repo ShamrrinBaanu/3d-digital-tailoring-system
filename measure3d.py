@@ -96,7 +96,7 @@ def measure_side_profile_with_timer():
             cv2.line(display_frame, (0, int(current_hip_y)), (640, int(current_hip_y)), (255, 0, 255), 1)
             print(f"Timer: {time_left}s | Status:  Tracking Active", end="\r")
         else:
-            print(f"Timer: {time_left}s | Status: ❌ Adjust Position - Joints Hidden", end="\r")
+            print(f"Timer: {time_left}s | Status: Adjust Position - Joints Hidden", end="\r")
 
         # UI Text Overlays
         if time_left > 0:
@@ -126,11 +126,11 @@ def measure_side_profile_with_timer():
     cv2.destroyAllWindows()
 
     if final_shoulder_y is None or final_hip_y is None:
-        print("\n❌ CAPTURE ERROR: At the moment of snapshot, joints were not detected.")
+        print("\nCAPTURE ERROR: At the moment of snapshot, joints were not detected.")
         print("Please pull your hair up, step clear of furniture, and try again.")
         return
 
-    print("\n\n📸 SNAP! Photo locked successfully. Processing silhouette segment blocks...")
+    print("\n\nSNAP! Photo locked successfully. Processing silhouette segment blocks...")
     
     # Image thresholding pipeline configuration
     gray = cv2.cvtColor(side_snapshot, cv2.COLOR_BGR2GRAY)
@@ -143,7 +143,7 @@ def measure_side_profile_with_timer():
 
     # Print Clean Metrics Log directly into the VS Code Terminal
     print("\n" + "="*40)
-    print("📏 REAL-WORLD CALCULATED SIDE DEPTHS:")
+    print("REAL-WORLD CALCULATED SIDE DEPTHS:")
     print(f"Calculated Chest Depth : {chest_depth_cm:.2f} cm")
     print(f"Calculated Hip Depth   : {hip_depth_cm:.2f} cm")
     print("="*40)
