@@ -70,5 +70,5 @@ AI Output: Automatically extracts your side chest and hip depth silhouettes.
 The system automatically passes the multi-perspective data stream into Ramanujan's Elliptical Perimeter formula to print your finalized 3D circumferences:
 
         FINAL 3D PREDICTED BODY METRICS 
- CALCULATED CHEST CIRCUMFERENCE : 94.25 cm
- CALCULATED HIP CIRCUMFERENCE   : 102.10 cm
+ CALCULATED CHEST CIRCUMFERENCE 
+ CALCULATED HIP CIRCUMFERENCE 
